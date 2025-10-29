@@ -1,5 +1,7 @@
 # Dynamic Routing Application
 
+### Bu proje geliştirme aşamasındadır.
+
 Modern bir web tabanlı dinamik rotalama uygulaması. React frontend ve Express backend kullanarak JSON formatındaki rota dosyalarını görselleştirir ve dinamik rotalama imkanı sunar.
 
 ##  Özellikler
