@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: DeliverOps API
+  version: 0.1.0
+
+paths:
+  /api/auth/login:
+    post:
+      summary: Login user
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        200:
+          description: Login success
+
+  /api/auth/register:
+    post:
+      summary: Register customer
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                full_name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                phone_number:
+                  type: string
+      responses:
+        200:
+          description: Registration success

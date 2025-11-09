@@ -1,8 +1,65 @@
-# Dynamic Routing Application
+# DeliverOps
 
-### Bu proje geliştirme aşamasındadır.
 
-Modern bir web tabanlı dinamik rotalama uygulaması. React frontend ve Express backend kullanarak JSON formatındaki rota dosyalarını görselleştirir ve dinamik rotalama imkanı sunar.
+| Bu proje geliştirme aşamasındadır.
+
+
+Bu proje, çok rollü (admin / driver / customer) teslimat operasyonlarını yönetmek için geliştirilen bir Fleet Management Sistemidir.
+
+## Şu Ana Kadar Yapılanlar ✅
+
+- Proje frontend & backend olarak ayrıldı
+- Backend:
+  - Express.js kuruldu
+  - MongoDB bağlantısı yapıldı (local)
+  - Swagger UI entegre edildi
+  - `users` collection modeli kuruldu
+  - `/auth/login` endpoint’i yazıldı
+  - `/auth/register` endpoint’i yazıldı (role = customer default)
+- Frontend (React):
+  - Login Page oluşturuldu
+  - Register Page oluşturuldu
+  - role’a göre yönlendirme yapıldı (`/admin`, `/driver`, `/customer`)
+  - Admin / Driver / Customer klasör yapısı oluşturuldu
+  - Her biri için placeholder sayfalar çalışıyor
+
+
+Driver tarafı mobil bir uygulama olarak planlanıyor. Driver uygulamasını açıp siparişleri map üzerinde görevcek ve bunu tamamen GPS üzerinden ilerleyerek teslimatlarını tamamlayacak. 
+Teslimat tamamlandıkça onaylayacak ve veritabanını güncellemiş olacak. Böylece admin bunu göreebilecek. Her teslimat session'ı bir task olarak yönetilebilecek. 
+
+Customer sayfası ise yine bir mobil uygulama olacak. Kullanıcı tarafına hitap edecek ve kullanıcı ürünleri görüp sipariş verebilecek. Verdiği siparişin durumunu görebilecek.
+
+
+## Gelecek Geliştirmeler (TO-DO) 📌
+
+### Genel Mimaride Gelecek Adımlar
+- [ ] Driver App ayrı frontend (React Native / Expo) olarak çıkarılacak -> MOBİL ÖZELLL sx 
+- [ ] Customer App ayrı frontend (React Native / Expo) olarak çıkarılacak -> MOBİL ÖZELLL
+- [ ] Backend tek kalacak, hepsi aynı API’yi kullanacak
+
+### Backend TODO
+- [ ] Password hashing (bcrypt veya argon2)
+- [ ] JWT auth token yapısı
+- [ ] Role based middleware (adminOnly, driverOnly, customerOnly)
+- [ ] Order modeli oluşturulacak
+- [ ] Driver’a route assign endpoint
+- [ ] Swagger dokümantasyonu YAML’dan genişletilecek
+- [ ] Test ortamı (Jest)
+
+### Frontend TODO
+- [ ] Login sonrası role bilgisini localStorage’a yaz
+- [ ] Sayfa reload’da role kontrol middleware (ProtectedRoute)
+- [ ] Admin Panel UI bootstrap ile detaylandırılacak
+- [ ] Driver Panel UI mobil-first olarak geliştirilecek (Expo / RN’e hazırlık)
+- [ ] Customer Panel basic order view hazırlanacak
+
+
+
+## Notlar
+
+- Mevcut backend DB adı: **Delivery** (Windows case conflict yüzünden bu isimde karar kılındı)
+- users collection ismi otomatik olarak Mongoose tarafından `users` şeklinde oluşturulur
+
 
 
 

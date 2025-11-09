@@ -1,21 +1,10 @@
-const swaggerJsdoc = require("swagger-jsdoc");
+const fs = require("fs");
+const yaml = require("js-yaml");
 const swaggerUi = require("swagger-ui-express");
 
-const options = {
-  definition: {
-    openapi: "3.0.0",
-    info: {
-      title: "DeliverOps API",
-      version: "0.1.0"
-    }
-  },
-  apis: ["./routes/*.js"], // <-- route'lardaki anotasyonları okuyacak
-};
-
-const swaggerSpec = swaggerJsdoc(options);
-
 const swaggerDocs = (app) => {
-  app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  const swaggerDocument = yaml.load(fs.readFileSync("./swagger.yaml", "utf8"));
+  app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   console.log("Swagger UI running ⇒ http://localhost:4000/docs");
 };
 

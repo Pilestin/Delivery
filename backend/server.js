@@ -15,11 +15,8 @@ const swaggerDocs = require("./swagger");
 swaggerDocs(app);
 
 
-
-
-
 /* MongoDB Bağlantısı */
-mongoose.connect("mongodb://127.0.0.1:27017/delivery")
+mongoose.connect("mongodb://127.0.0.1:27017/Delivery")
 .then(()=> console.log("MongoDB connected (local)"))
 .catch(err=> console.log(err));
 
@@ -34,3 +31,16 @@ app.get("/health", (req,res)=>{
 
 
 app.listen(PORT, ()=> console.log(`API running on http://localhost:${PORT}`));
+
+
+/* -------------- AUTH için router'lar  --------------
+
+  /login 
+  /register
+
+*/
+const authRouter = require("./routes/auth");
+app.use("/api/auth", authRouter);
+
+
+// ---------------------------------------------------
