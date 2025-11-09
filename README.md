@@ -4,7 +4,12 @@
 
 Modern bir web tabanlı dinamik rotalama uygulaması. React frontend ve Express backend kullanarak JSON formatındaki rota dosyalarını görselleştirir ve dinamik rotalama imkanı sunar.
 
-##  Özellikler
+
+
+### Future
+
+
+Özellikler
 
 - **JSON Rota Yükleme**: Rota dosyalarını drag & drop ile yükleme
 - **İnteraktif Harita**: Leaflet tabanlı modern harita arayüzü
@@ -15,55 +20,56 @@ Modern bir web tabanlı dinamik rotalama uygulaması. React frontend ve Express 
 - **Modern UI**: Ant Design ile profesyonel arayüz
 - **Responsive Design**: Mobil ve masaüstü uyumlu
 
-##  Teknolojiler
+Teknolojiler
 
-### Frontend
+Frontend
+
 - React 18
 - Ant Design (UI Framework)
 - React Leaflet (Harita)
 - Axios (HTTP Client)
 - Styled Components
 
-### Backend
+Backend
 - Node.js
 - Express.js
 - Multer (Dosya Yükleme)
 - OSRM (Rota Hesaplama)
 
-##  Gereksinimler
+Gereksinimler
 
 - Node.js 16+
 - OSRM Server (localhost:5000)
 
-##  Kurulum
 
-### 1. Depoyu Klonlayın
+Kurulum
+
+1. Depoyu Klonlayın
 ```bash
 git clone <repository-url>
 cd dynamic-routing-app
 ```
 
-### 2. Backend Kurulumu
+2. Backend Kurulumu
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-
-### 3. Frontend Kurulumu
+1. Frontend Kurulumu
 ```bash
 cd frontend
 npm install
 npm start
 ```
 
-### 4. OSRM Server Kurulumu
+1. OSRM Server Kurulumu
 ```bash
 # Docker ile OSRM kurulumu (önerilen)
 docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/turkey-latest.osrm
 ```
 
-##  Kullanım
+Kullanım
 
 1. **Rota Dosyası Yükle**: Sol panelden JSON rota dosyanızı yükleyin
 2. **Rota Seç**: Yüklenen rotalardan birini seçin
@@ -71,7 +77,7 @@ docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --
 4. **Yeni Nokta Ekle**: "Yeni Nokta Ekle" butonuna tıklayıp harita üzerinde istediğiniz noktaya tıklayın
 5. **Rota Güncellensin**: OSRM ile yeni rota otomatik hesaplanır
 
-##  JSON Format
+JSON Format
 
 ```json
 {
