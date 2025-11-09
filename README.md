@@ -63,8 +63,10 @@ Customer sayfası ise yine bir mobil uygulama olacak. Kullanıcı tarafına hita
 
 
 
-### Future
 
+
+
+### Future (Elbet bir gün)
 
 Özellikler
 
@@ -77,48 +79,6 @@ Customer sayfası ise yine bir mobil uygulama olacak. Kullanıcı tarafına hita
 - **Modern UI**: Ant Design ile profesyonel arayüz
 - **Responsive Design**: Mobil ve masaüstü uyumlu
 
-Teknolojiler
-
-Frontend
-
-- React 18
-- Ant Design (UI Framework)
-- React Leaflet (Harita)
-- Axios (HTTP Client)
-- Styled Components
-
-Backend
-- Node.js
-- Express.js
-- Multer (Dosya Yükleme)
-- OSRM (Rota Hesaplama)
-
-Gereksinimler
-
-- Node.js 16+
-- OSRM Server (localhost:5000)
-
-
-Kurulum
-
-1. Depoyu Klonlayın
-```bash
-git clone <repository-url>
-cd dynamic-routing-app
-```
-
-2. Backend Kurulumu
-```bash
-cd backend
-npm install
-npm run dev
-```
-1. Frontend Kurulumu
-```bash
-cd frontend
-npm install
-npm start
-```
 
 1. OSRM Server Kurulumu
 ```bash
@@ -184,40 +144,6 @@ JSON Format
     }
   ]
 }
-```
-
-## 🔧 API Endpoints
-
-- `POST /api/routes/upload` - Rota dosyası yükleme
-- `GET /api/routes/:routeId` - Rota verilerini getirme
-- `GET /api/routes/:routeId/route/:routeName` - Belirli rotayı getirme
-- `POST /api/routes/:routeId/route/:routeName/add-point` - Rotaya nokta ekleme
-- `POST /api/osrm/route` - OSRM ile rota hesaplama
-
-### Kod Yapısı
-```
-dynamic-routing-app/
-├── backend/           # Express.js API
-│   ├── server.js     # Ana server dosyası
-│   ├── uploads/      # Yüklenen dosyalar
-│   └── stored-routes/ # Kaydedilen rotalar
-├── frontend/         # React uygulaması
-│   └── src/
-│       ├── components/   # React bileşenleri
-│       ├── services/     # API servisleri
-│       └── App.js       # Ana uygulama
-└── README.md
-```
-
-##  Harita Katmanları
-
-- **OpenStreetMap**: Standart sokak haritası
-- **CartoDB**: Minimal ve temiz görünüm
-- **Esri Satellite**: Uydu görüntüleri
-- **Terrain**: Topografik harita
-
-##  Rota Gösterimi
-
 - **Düz Çizgi**: Basit polyline
 - **Animasyonlu**: Hareket eden kesikli çizgi
 - **Oklu Çizgi**: Yön belirten oklar
@@ -243,9 +169,6 @@ Uygulama mobil cihazlarda da kullanılabilir. Sol panel daraltılabilir ve harit
 4. Push edin (`git push origin feature/amazing-feature`)
 5. Pull Request oluşturun
 
-##  Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
 
 
 
