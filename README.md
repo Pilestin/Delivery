@@ -30,6 +30,45 @@ Teslimat tamamlandıkça onaylayacak ve veritabanını güncellemiş olacak. Bö
 Customer sayfası ise yine bir mobil uygulama olacak. Kullanıcı tarafına hitap edecek ve kullanıcı ürünleri görüp sipariş verebilecek. Verdiği siparişin durumunu görebilecek.
 
 
+## GitHub Actions - Frontend Deployment 🚀
+
+Frontend uygulaması GitHub Pages'e otomatik olarak deploy edilmektedir.
+
+### Deployment Ayarları
+
+- **Workflow Dosyası**: `.github/workflows/deploy-frontend.yml`
+- **Tetikleme**: 
+  - `main` branch'e push yapıldığında (sadece `frontend/` klasöründe değişiklik olursa)
+  - Manuel olarak GitHub Actions sekmesinden çalıştırılabilir
+- **Deploy URL**: https://pilestin.github.io/Delivery/
+
+### Workflow Adımları
+
+1. ✅ Kod checkout
+2. ✅ Node.js kurulumu (v20)
+3. ✅ Bağımlılıkların yüklenmesi (`npm ci`)
+4. ✅ Linting (`npm run lint`)
+5. ✅ Build (`npm run build`)
+6. ✅ GitHub Pages'e deployment
+
+### Yerel Geliştirme
+
+```bash
+cd frontend
+npm install
+npm run dev      # Development server
+npm run build    # Production build
+npm run lint     # Linting
+npm run preview  # Preview production build
+```
+
+### Önemli Notlar
+
+- Frontend base path `/Delivery/` olarak yapılandırılmıştır (GitHub Pages için)
+- BrowserRouter basename otomatik olarak ayarlanmaktadır
+- Production build'de assets doğru path'lerle yüklenmektedir
+
+
 ## Gelecek Geliştirmeler (TO-DO) 📌
 
 ### Genel Mimaride Gelecek Adımlar
