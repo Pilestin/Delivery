@@ -8,7 +8,7 @@ import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/admin" element={<AdminPage />} />
