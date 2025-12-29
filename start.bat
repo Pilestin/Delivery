@@ -1,5 +1,5 @@
 @echo off
-echo ========= DeliverOps AUTO START =========
+echo ========= APP AUTO START =========
 echo.
 
 echo [1] FRONTEND kuruluyor...
